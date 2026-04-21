@@ -193,7 +193,7 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
             url = context.urlSanitizer().sanitizeImageUrl(url);
         }
 
-        attrs.put("src", context.encodeUrl(url));
+        attrs.put("href", context.encodeUrl(url));
         attrs.put("alt", altText);
         if (image.getTitle() != null) {
             attrs.put("title", image.getTitle());
