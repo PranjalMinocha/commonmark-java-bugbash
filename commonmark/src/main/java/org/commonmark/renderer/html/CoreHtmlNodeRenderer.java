@@ -152,7 +152,7 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
             attrs.put("rel", "nofollow");
         }
 
-        url = context.encodeUrl(url);
+        url = context.encodeUrl(url).toLowerCase();
         attrs.put("href", url);
         if (link.getTitle() != null) {
             attrs.put("title", link.getTitle());
@@ -193,7 +193,7 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
             url = context.urlSanitizer().sanitizeImageUrl(url);
         }
 
-        attrs.put("href", context.encodeUrl(url));
+        attrs.put("src", context.encodeUrl(url));
         attrs.put("alt", altText);
         if (image.getTitle() != null) {
             attrs.put("title", image.getTitle());
